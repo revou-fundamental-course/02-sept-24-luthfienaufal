@@ -2,101 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Segitiga dan Jajargenjang</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Kalkulator Sederhana Untuk Menghitung Luas dan Keliling Bangun Datar</h1>
-        
-        <div id="pilihan">
-            <p>Silakan pilih kalkulator yang ingin Anda gunakan:</p>
-            <button onclick="tampilkanForm('segitiga')">Kalkulator Segitiga</button>
-            <button onclick="tampilkanForm('jajargenjang')">Kalkulator Jajargenjang</button>
-        </div>
-
-        <!-- Kalkulator Segitiga -->
-        <div id="formSegitiga" class="hidden">
-            <h2>Kalkulator Segitiga</h2>
-            <div id="formSegitigaButtons">
-                <button onclick="tampilkanSegitiga('luas')">Hitung Luas</button>
-                <button onclick="tampilkanSegitiga('keliling')">Hitung Keliling</button>
-            </div>
-
-            <div id="luasFormSegitiga" class="hidden">
-                <h3>Hitung Luas Segitiga</h3>
-                <p><strong>Rumus Luas:</strong> Luas = 1/2 x alas x tinggi</p>
-                <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Rumus%20Luas%20Segitiga%20Jika%20Diketahui%20Alas%20dan%20Tinggi%20-%20Matematika%20Kelas%207.png" alt="Rumus Luas Segitiga" class="gambar-kalkulator">
-                <label for="alasSegitiga">Masukkan alas (cm):</label>
-                <input type="number" id="alasSegitiga" placeholder="Masukkan nilai alas" required><br><br>
-
-                <label for="tinggiSegitiga">Masukkan tinggi (cm):</label>
-                <input type="number" id="tinggiSegitiga" placeholder="Masukkan nilai tinggi" required><br><br>
-
-                <button type="button" onclick="hitungLuasSegitiga()">Hitung Luas</button>
-                <button type="button" onclick="resetSegitiga()">Reset</button>
-            </div>
-
-            <div id="kelilingFormSegitiga" class="hidden">
-                <h3>Hitung Keliling Segitiga</h3>
-                <p><strong>Rumus Keliling:</strong> Keliling = sisi1 + sisi2 + sisi3</p>
-                <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Rumus%20Keliling%20Segitiga%20-%20Matematika%20Kelas%207.png" alt="Rumus Keliling Segitiga" class="gambar-kalkulator">
-                <label for="sisi1Segitiga">Masukkan sisi 1 (cm):</label>
-                <input type="number" id="sisi1Segitiga" placeholder="Masukkan nilai sisi1" required><br><br>
-
-                <label for="sisi2Segitiga">Masukkan sisi 2 (cm):</label>
-                <input type="number" id="sisi2Segitiga" placeholder="Masukkan nilai sisi2" required><br><br>
-
-                <label for="sisi3Segitiga">Masukkan sisi 3 (cm):</label>
-                <input type="number" id="sisi3Segitiga" placeholder="Masukkan nilai sisi3" required><br><br>
-
-                <button type="button" onclick="hitungKelilingSegitiga()">Hitung Keliling</button>
-                <button type="button" onclick="resetSegitiga()">Reset</button>
-            </div>
-
-            <p id="hasilSegitiga"></p>
-        </div>
-
-        <!-- Kalkulator Jajargenjang -->
-        <div id="formJajargenjang" class="hidden">
-            <h2>Kalkulator Jajargenjang</h2>
-            <div id="formJajargenjangButtons">
-                <button onclick="tampilkanJajaran('luas')">Hitung Luas</button>
-                <button onclick="tampilkanJajaran('keliling')">Hitung Keliling</button>
-            </div>
-
-            <div id="luasFormJajargenjang" class="hidden">
-                <h3>Hitung Luas Jajargenjang</h3>
-                <p><strong>Rumus Luas:</strong> Luas = alas x tinggi</p>
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr7GGZqoyWNxcAVt_61z_1kXllrMcg6ZIxJiYbxhjQoDwsahdeEPy0ibGzqfLCJXpAysb-r4bPt2Icqb7LCBCksii7m7z5k2-K7gY-JeWOTa3b0aKRgkC-d2v1xhH7pcprGuM3q8_yS60/s320/Matematika+SD+-+Rumus+Luas+Jajaran+Genjang+-+2.png" alt="Rumus Luas Jajargenjang" class="gambar-kalkulator">
-                <label for="alasJajaran">Masukkan alas (cm):</label>
-                <input type="number" id="alasJajaran" placeholder="Masukkan nilai alas" required><br><br>
-
-                <label for="tinggiJajaran">Masukkan tinggi (cm):</label>
-                <input type="number" id="tinggiJajaran" placeholder="Masukkan nilai tinggi" required><br><br>
-
-                <button type="button" onclick="hitungLuasJajaran()">Hitung Luas</button>
-                <button type="button" onclick="resetJajaran()">Reset</button>
-            </div>
-
-            <div id="kelilingFormJajargenjang" class="hidden">
-                <h3>Hitung Keliling Jajargenjang</h3>
-                <p><strong>Rumus Keliling:</strong> Keliling = 2 x (alas + sisi miring)</p>
-                <img src="https://www.antotunggal.com/wp-content/uploads/2017/12/genjang2.png" alt="Rumus Luas Jajargenjang" class="gambar-kalkulator">
-                <label for="alasJajaranKeliling">Masukkan alas (cm):</label>
-                <input type="number" id="alasJajaranKeliling" placeholder="Masukkan nilai alas" required><br><br>
-
-                <label for="sisiMiring">Masukkan sisi miring (cm):</label>
-                <input type="number" id="sisiMiring" placeholder="Masukkan nilai sisi miring" required><br><br>
-
-                <button type="button" onclick="hitungKelilingJajaran()">Hitung Keliling</button>
-                <button type="button" onclick="resetJajaran()">Reset</button>
-            </div>
-
-            <p id="hasilJajargenjang"></p>
-        </div>
-    </div>
-    <script src="js/script.js"></script>
+    
 </body>
 </html>
